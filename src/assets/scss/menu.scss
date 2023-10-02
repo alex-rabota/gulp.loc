@@ -1,0 +1,171 @@
+@import 'option.scss';
+
+.menu {
+    display: flex;
+
+    & > &__item {
+        & > a {
+            margin: 0 15px;
+            padding: 26.5px 0;
+
+            &:hover {
+                color: $red;
+            }
+        }
+
+        @include minW('desctop-small') {
+            &:first-child a {
+                margin-left: 0;
+            }
+
+            &:last-child a {
+                margin-right: 0;
+            }
+        }
+    }
+
+    & > li > &__sub-ul {
+        top: $height-header;
+
+        & > li.menu__item--sub-left > a:after {
+            content: '\f105';
+            font: 15px "fontello";
+            display: inline-block;
+            position: absolute;
+            right: 15px;
+        }
+
+        a {
+            padding: 15px;
+            width: 100%;
+
+            &:hover {
+                color: $red;
+                background: $grey-light-two;
+            }
+
+            @include maxW('desctop-small') {
+                width: calc(100% - 30px);
+            }
+        }
+
+        & > li > .menu__sub-ul {
+            top: -1px;
+            left: $width-sub-menu;
+            border-left: 1px solid #dfe3e4;
+            border-right: 1px solid #dfe3e4;
+        }
+    }
+
+    &__item--sub {
+        & > a:after {
+            content: '\f107';
+            font: 15px "fontello";
+            margin-left: 7px;
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            transition: $transition;
+        }
+
+        @include minW('desctop-small') {
+            &:hover {
+                & > .menu__sub-ul {
+                    display: block;
+                    animation: menu__move-down 0.2s ease-in-out;
+                    z-index: 2;
+                }
+            }
+
+            & > .menu__sub-ul > li:hover {
+                .menu__sub-ul {
+                    display: block;
+                    animation: menu__move-left 0.2s ease-in-out;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}
+
+@include minW('desctop-small') {
+    .menu__sub-ul {
+        display: none;
+        position: absolute;
+        background: $white;
+        width: $width-sub-menu;
+        border-top: 1px solid $gray-middle;
+        border-bottom: 1px solid $gray-middle;
+        box-shadow: 1px 0 0 0 $gray-middle;
+    }
+}
+
+@include maxW('desctop-small') {
+    ul {
+        flex-direction: column;
+    }
+
+    .menu {
+        & > .menu__item {
+            border-bottom: 1px solid $gray-middle;
+
+            &:first-child {
+                border-top: 1px solid $gray-middle;
+            }
+
+            a {
+                padding: 15px 0;
+                margin: 0 15px;
+                width: calc(100% - 30px);
+            }
+
+            &--sub > a:after {
+                right: -155px;
+            }
+
+            &.active {
+                & > a {
+                    color: $red;
+
+                    &:after {
+                        transform: rotate(180deg);
+                    }
+                }
+
+                & > ul {
+                    max-height: 141px;
+                }
+            }
+        }
+
+        & > li > .menu__sub-ul {
+            max-height: 0;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: $grey-light-two;
+            transition: max-height $transition;
+
+            .menu__sub {
+                border-top: 1px solid $gray-middle;
+            }
+
+            & > li > .menu__sub-ul {
+                background: $gray-middle;
+                max-height: 0;
+                overflow: hidden;
+            }
+        }
+    }
+
+    .angle-btn {
+        width: 47px;
+        height: 47px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+}

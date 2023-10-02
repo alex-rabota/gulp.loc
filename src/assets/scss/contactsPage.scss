@@ -1,0 +1,58 @@
+@import 'option.scss';
+
+#contacts-page {
+    position: relative;
+    top: -100px;
+    margin-bottom: -$margin-bottom-section;
+
+    .contacts-page {
+        &__container {
+            width: 100%;
+        }
+
+        &__item {
+            width: col(1);
+            padding: 50px 50px 40px;
+
+            @include maxW('tablet-small') {
+                & {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            &:nth-child(1) {
+                background: $white;
+            }
+
+            &:nth-child(2) {
+                background: $gray-middle;
+            }
+
+            &:nth-child(3) {
+                background: $red;
+                color: $white;
+            }
+
+            &--icon {
+                width: 30px;
+                font-size: 30px;
+                margin-bottom: 20px;
+
+                @include maxW('tablet-small') {
+                    & {
+                        margin: 0 auto 20px;
+                    }
+                }
+
+                i::before {
+                    margin: 0;
+                }
+            }
+
+            a:hover {
+                color: $red;
+            }
+        }
+    }
+}

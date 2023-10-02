@@ -1,0 +1,18 @@
+@import 'option.scss';
+
+.angle-link a {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+
+    &:before {
+        content: url('../../assets/images/angle-right.svg');
+        margin-right: 10px;
+        position: relative;
+        top: 3px;
+    }
+
+    &:hover {
+        transform: translateX(20px);
+    }
+}

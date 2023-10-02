@@ -1,0 +1,34 @@
+@import 'option.scss';
+
+@keyframes menu__move-down {
+    from {
+        top: $height-header + 40px;
+        opacity: 0;
+    }
+    to {
+        top: $height-header;
+        opacity: 1;
+    }
+}
+
+@keyframes menu__move-left {
+    from {
+        left: $width-sub-menu - 40px;
+        opacity: 0;
+    }
+    to {
+        left: $width-sub-menu;
+        opacity: 1;
+    }
+}
+
+@keyframes menu__move-mobile {
+    from {
+        height: 0;
+        opacity: 0;
+    }
+    to {
+        height: auto;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,27 @@
+@import 'option.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none
+}
+
+html, body {
+    font-family: 'Consolas', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: $gray-dark;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    transition: $transition;
+}

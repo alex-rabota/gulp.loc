@@ -1,0 +1,12 @@
+@import 'option.scss';
+
+#add-content {
+    margin-bottom: $margin-bottom-section;
+
+    .add-content {
+        &__container {
+            background: $white;
+            padding: $padding-block;
+        }
+    }
+}

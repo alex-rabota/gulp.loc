@@ -1,0 +1,71 @@
+@import 'option.scss';
+
+.advantages {
+    margin-bottom: $margin-bottom-section;
+
+    &__container {
+        width: 100%;
+        background: $white;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 50%;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include maxW('mobile') {
+            width: 100%;
+        }
+
+        @include maxW('mobile-small') {
+            padding: 30px;
+        }
+
+        &:nth-child(1) {
+            border-right: 1px solid $grey-light-two;
+
+            @include maxW('mobile') {
+                border-right: none;
+                border-bottom: 1px solid $grey-light-two;
+            }
+        }
+
+        &:nth-child(3) {
+            border-right: 1px solid $grey-light-two;
+            border-top: 1px solid $grey-light-two;
+
+            @include maxW('mobile') {
+                border-right: none;
+            }
+        }
+
+        &:nth-child(4) {
+            border-top: 1px solid $grey-light-two;
+        }
+    }
+
+    &__img {
+        margin-bottom: 20px;
+    }
+
+    &__header {
+        color: $red;
+
+        @include maxW('tablet') {
+            text-align: center;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        width: 95%;
+    }
+}

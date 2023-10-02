@@ -1,0 +1,49 @@
+@import 'option.scss';
+
+.work {
+    position: relative;
+    margin-bottom: $margin-bottom-section;
+    z-index: 1;
+
+    &__container {
+        width: 100%;
+        background: $white;
+    }
+
+    &__content {
+        display: flex;
+
+        @include maxW('tablet') {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        text-align: center;
+        padding: 50px 30px;
+        position: relative;
+        width: 20%;
+
+        @include maxW('tablet') {
+            width: 100%;
+        }
+
+        img {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__header h3 {
+        font-size: 18px;
+    }
+
+    &__label {
+        position: absolute;
+        font-size: 22px;
+        font-weight: bold;
+        top: 20px;
+        left: 40px;
+        color: $gray-dark;
+        opacity: 0.5;
+    }
+}

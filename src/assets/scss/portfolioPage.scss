@@ -1,0 +1,90 @@
+@import 'option.scss';
+
+#portfolio-page {
+    position: relative;
+    top: -100px;
+    margin-bottom: -$margin-bottom-section;
+
+    .portfolio-page {
+        &__container {
+            width: 100%;
+        }
+
+        &__item {
+            width: col(1);
+            height: auto;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+
+            @include maxW('tablet') {
+                & {
+                    width: 50%;
+                }
+            }
+
+            @include maxW('mobile') {
+                & {
+                    width: 100%;
+                }
+            }
+
+            .btn-modal {
+                display: flex;
+            }
+
+            &--hidden {
+                opacity: 0;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                background: rgba(204, 0, 0, 0.7);
+                position: absolute;
+                left: 0;
+                transition: .4s;
+                z-index: 1;
+
+                h3 {
+                    color: $white;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .hidden-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+
+                .hidden-icon {
+                    color: $white;
+                    font-size: 24px;
+                    border: 2px solid $white;
+                    border-radius: 50%;
+                    width: 70px;
+                    height: 70px;
+                    margin-bottom: 30px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            img {
+                width: 100%;
+                transition: .4s;
+            }
+
+            &:hover img {
+                transform: scale(1.2);
+            }
+
+            &:hover .portfolio-page__item--hidden {
+                opacity: 1;
+            }
+        }
+    }
+}

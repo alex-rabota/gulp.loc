@@ -1,0 +1,26 @@
+@import 'option.scss';
+
+#login {
+    display: flex;
+    height: calc(100vh - 70px);
+
+    .login-page {
+        &__item {
+            background: $white;
+            padding: 30px;
+
+            h1 {
+                margin-bottom: 20px;
+                font-size: 26px;
+            }
+
+            .form-group {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    #login-form {
+        min-width: 260px;
+    }
+}

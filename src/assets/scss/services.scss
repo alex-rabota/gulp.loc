@@ -1,0 +1,64 @@
+@import 'option.scss';
+
+.services {
+    position: relative;
+    top: -100px;
+    z-index: 1;
+    margin-bottom: -$margin-bottom-section;
+
+    &__container {
+        display: flex;
+
+        @include maxW('tablet') {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        padding: 50px 50px 40px;
+        width: col(1);
+        display: flex;
+        flex-direction: column;
+
+        @include maxW('mobile-small') {
+            padding: $padding-block-mobile;
+        }
+
+        &:nth-child(1) {
+            background: $white;
+        }
+
+        &:nth-child(2) {
+            background: $gray-middle;
+        }
+
+        &:nth-child(3) {
+            background: $red;
+            color: $white;
+
+            .angle-link a:before {
+                content: url('../../assets/images/angle-right-white.svg');
+            }
+        }
+
+        @include maxW('tablet') {
+            width: 100%;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex: auto;
+    }
+
+    &__price span {
+        font-size: 24px;
+        display: inline-block;
+        margin: 20px 0;
+    }
+}

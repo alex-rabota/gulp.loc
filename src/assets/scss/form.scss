@@ -1,0 +1,159 @@
+@import 'option.scss';
+
+.form {
+    @include maxW('mobile') {
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 50px;
+    }
+
+    @include maxW('mobile-small') {
+        padding-bottom: 70px;
+    }
+
+    &-agree {
+        @include maxW('mobile') {
+            cursor: pointer;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    &__sep {
+        width: 50%;
+
+        &:nth-child(2) {
+            margin-right: 50px;
+        }
+
+        @include maxW('mobile') {
+            width: 100%;
+        }
+    }
+
+    @include maxW('tablet') {
+        width: 100%;
+    }
+
+    &__block h2 {
+        margin-bottom: 20px;
+    }
+
+    .has-success {
+        label {
+            color: $green;
+        }
+
+        input, textarea, select {
+            border-color: $green;
+        }
+    }
+
+    .has-error {
+        label, .help-block-error {
+            color: $red;
+        }
+
+        input {
+            border-color: $red;
+        }
+    }
+
+    label[for="loginform-rememberme"] {
+        color: $gray-dark;
+    }
+
+    .help-block {
+        position: relative;
+        top: 5px;
+    }
+
+    .form-agree {
+        cursor: pointer;
+
+        span {
+            font-size: 12px;
+            user-select: none;
+        }
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .check-label {
+        cursor: pointer;
+    }
+
+    .check-box, #loginform-rememberme {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        clip: rect(0 0 0 0);
+    }
+
+    .check-style {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: solid 1px #d2dae3;
+        position: relative;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .check-box:checked + .check-style:before,
+    #loginform-rememberme:checked + .check-style:before {
+        content: "";
+        background: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDI2IDI2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyNiAyNiIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CiAgPHBhdGggZD0ibS4zLDE0Yy0wLjItMC4yLTAuMy0wLjUtMC4zLTAuN3MwLjEtMC41IDAuMy0wLjdsMS40LTEuNGMwLjQtMC40IDEtMC40IDEuNCwwbC4xLC4xIDUuNSw1LjljMC4yLDAuMiAwLjUsMC4yIDAuNywwbDEzLjQtMTMuOWgwLjF2LTguODgxNzhlLTE2YzAuNC0wLjQgMS0wLjQgMS40LDBsMS40LDEuNGMwLjQsMC40IDAuNCwxIDAsMS40bDAsMC0xNiwxNi42Yy0wLjIsMC4yLTAuNCwwLjMtMC43LDAuMy0wLjMsMC0wLjUtMC4xLTAuNy0wLjNsLTcuOC04LjQtLjItLjN6IiBmaWxsPSIjMDAwMDAwIi8+Cjwvc3ZnPgo=) no-repeat center;
+        display: block;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 50%;
+        margin: -6px 0 0 -6px;
+        left: 50%;
+        background-size: contain;
+    }
+
+    .check-text {
+        font-size: 12px;
+        font-weight: normal;
+        user-select: none;
+    }
+
+    .field-loginform-wrapper {
+        user-select: none;
+    }
+
+    .field-modalform-theme {
+        margin: 0;
+    }
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            border: 2px solid $gray-middle;
+            height: 40px;
+            padding: 10px;
+        }
+
+        textarea {
+            height: 122px;
+        }
+
+        button {
+            background: $red;
+        }
+    }
+}

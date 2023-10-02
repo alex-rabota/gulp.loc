@@ -1,0 +1,81 @@
+@import 'option.scss';
+
+.header {
+    background: $white;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 -5px 10px $gray-dark;
+    z-index: 3;
+
+    .wrapper {
+        justify-content: space-between;
+        align-items: center;
+
+        @include maxW('mobile') {
+            flex-direction: column;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    &__nav {
+        li {
+            position: relative;
+
+            &.active > a {
+                color: $red;
+            }
+        }
+
+        @include maxW('desctop-small') {
+            position: absolute;
+            top: 70px;
+            left: -$width-mobile-menu;
+            background: $white;
+            transition: left $transition;
+            width: $width-mobile-menu;
+            height: 100vh;
+
+            &.active {
+                left: 0;
+            }
+        }
+
+        @include maxW('mobile') {
+            top: 102px;
+        }
+    }
+
+    &__tel {
+        display: flex;
+
+        a {
+            font-size: 18px;
+            font-weight: bold;
+
+            &:hover {
+                color: $red;
+            }
+        }
+
+        @include maxW('mobile') {
+            margin: 0 0 10px;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        margin-right: 10px;
+    }
+
+    .btn-block {
+        @include maxW('tablet-small') {
+            display: none;
+        }
+    }
+}

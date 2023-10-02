@@ -1,0 +1,35 @@
+@import 'option.scss';
+
+#sitemap {
+    .sitemap {
+        &__container {
+            position: relative;
+            top: -100px;
+            margin-bottom: -$margin-bottom-section;
+            background: $white;
+            width: 100%;
+
+            &--content {
+                padding: $padding-block;
+
+                a {
+                    line-height: 1.5em;
+
+                    &:before {
+                        content: '\f105';
+                        font-family: "fontello";
+                        margin-right: 10px;
+                    }
+
+                    &:hover {
+                        color: $red;
+                    }
+                }
+
+                ul > li > ul {
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
+}

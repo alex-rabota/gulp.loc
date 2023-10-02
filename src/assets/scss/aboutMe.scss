@@ -1,0 +1,53 @@
+@import 'option.scss';
+
+.about-me {
+    margin-bottom: $margin-bottom-section;
+    position: relative;
+    z-index: 1;
+
+    &__container {
+        display: flex;
+    }
+
+    &__content {
+        width: col(2);
+        background: $white;
+        padding: $padding-block;
+
+        @include maxW('mobile-small') {
+            padding: $padding-block-mobile;
+        }
+
+        @include maxW('tablet') {
+            width: 100%;
+        }
+    }
+
+    &__soc {
+        margin-top: 20px;
+        font-size: 22px;
+
+        i {
+            transition: $transition;
+
+            &:before {
+                margin: 0;
+            }
+        }
+
+        a:hover {
+            i {
+                color: $red;
+            }
+        }
+    }
+
+    &__logo {
+        width: col(1);
+        background: $gray-dark;
+
+        @include maxW('tablet') {
+            display: none;
+        }
+    }
+}

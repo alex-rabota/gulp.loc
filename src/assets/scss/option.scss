@@ -1,0 +1,58 @@
+// Color
+$grey-light: #f6f6f6;
+$grey-light-two: #ebebeb;
+$gray-middle: #dfe3e4;
+$gray-dark: #383838;
+$footer-top: #303030;
+$footer-bottom: #202020;
+$white: #ffffff;
+$red: #cc0000;
+$red-light: #d83939;
+$green: #008000;
+
+// Size element
+$height-header: 70px;
+$width-sub-menu: 220px;
+$margin-bottom-section: 50px;
+$padding-block: 50px;
+$padding-block-mobile: 30px;
+$width-mobile-menu: 250px;
+
+// Transition
+$transition: 0.2s;
+
+// Breakpoints
+$breakpoints : (
+    'desctop-small': 1170px, // 1024px
+    'tablet': 990px, // 768px
+    'tablet-small': 750px, // 640px
+    'mobile': 600px, // 480px
+    'mobile-small': 420px, // 375px
+    'mobile-ex-small': 350px, // 320px
+);
+
+// Mixin
+@mixin maxW($widthScreen) {
+    @if map_has_key($breakpoints, $widthScreen) {
+        $width: map_get($breakpoints, $widthScreen);
+
+        @media (max-width: $width) {
+            @content
+        }
+    }
+}
+
+@mixin minW($widthScreen) {
+    @if map_has_key($breakpoints, $widthScreen) {
+        $width: map_get($breakpoints, $widthScreen);
+
+        @media (min-width: $width) {
+            @content
+        }
+    }
+}
+
+// Function
+@function col($num) {
+    @return calc(100% / 3) * $num;
+}

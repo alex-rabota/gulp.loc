@@ -1,0 +1,129 @@
+@import '../../../node_modules/swiper/swiper-bundle.min';
+@import 'option.scss';
+
+.slider {
+    width: 100%;
+    height: 740px;
+    background: url("../../assets/images/slider-bg.jpg") bottom center;
+    background-size: cover;
+
+    @include maxW('tablet-small') {
+        height: 600px;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .btn-block {
+            justify-content: center;
+        }
+
+        .swiper-pagination {
+            position: relative;
+            bottom: 150px;
+            z-index: 1 !important;
+        }
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+            opacity: 0.5;
+            transition: $transition;
+        }
+
+        .swiper-button-next:hover:after, .swiper-button-prev:hover:after {
+            opacity: 1;
+        }
+
+        .swiper-button-next:after {
+            content: "\f105";
+            font: 4em "fontello";
+            color: $white;
+        }
+
+        .swiper-button-prev:after {
+            content: "\f104";
+            font: 4em "fontello";
+            color: $white;
+        }
+
+        .swiper-pagination-bullet {
+            margin: 0 15px;
+            background: $gray-middle;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: $red;
+        }
+
+        .swiper-slide-container {
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            top: -30px;
+
+            @include maxW('tablet') {
+                width: 80%;
+            }
+
+            @include maxW('tablet-small') {
+                top: -60px;
+            }
+
+            h2 {
+                font-size: 48px;
+                text-transform: uppercase;
+                margin-bottom: 50px;
+
+                @include maxW('tablet') {
+                    font-size: 38px;
+                }
+
+                @include maxW('tablet-small') {
+                    font-size: 32px;
+                }
+
+                @include maxW('mobile') {
+                    margin-bottom: 20px;
+                }
+
+                @include maxW('mobile-small') {
+                    font-size: 28px;
+                }
+
+                @include maxW('mobile-ex-small') {
+                    font-size: 24px;
+                }
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 50px;
+
+                @include maxW('mobile') {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}

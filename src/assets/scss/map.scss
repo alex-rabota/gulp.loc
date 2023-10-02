@@ -1,0 +1,25 @@
+@import 'option.scss';
+
+#map {
+    @include maxW('mobile-small') {
+        height: 300px;
+        width: 90%;
+        overflow: hidden;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include maxW('tablet') {
+        & {
+            padding: 0 15px;
+        }
+    }
+
+    @include maxW('mobile-small') {
+        & {
+            padding: 0;
+        }
+    }
+}

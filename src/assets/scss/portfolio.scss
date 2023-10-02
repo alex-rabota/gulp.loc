@@ -1,0 +1,65 @@
+@import '../../../node_modules/swiper/swiper-bundle.min.css';
+@import 'option.scss';
+
+.portfolio {
+    margin-bottom: $margin-bottom-section;
+
+    .swiper-container {
+        text-align: center;
+        margin-left: -15px;
+        margin-right: -15px;
+        overflow: hidden;
+    }
+
+    .swiper-button-block {
+        position: absolute;
+        top: -12px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+
+        @include maxW('mobile-small') {
+            padding: 0 30px;
+        }
+
+        div {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: $transition;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__container {
+        width: 100%;
+        background: $white;
+    }
+
+    &__header {
+        position: relative;
+    }
+
+    &__content {
+        padding: 50px;
+
+        a:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &-button-next:after {
+        content: "\f105";
+        font: 4em "fontello";
+        color: $gray-dark;
+    }
+
+    &-button-prev:after {
+        content: "\f104";
+        font: 4em "fontello";
+        color: $gray-dark;
+    }
+}

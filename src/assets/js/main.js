@@ -1,0 +1,7 @@
+//= 'components/slider.js'
+//= 'components/form.js'
+//= 'components/menu.js'
+//= 'components/menuBtn.js'
+//= 'components/modal.js'
+//= 'components/portfolio.js'
+//= 'components/progress.js'

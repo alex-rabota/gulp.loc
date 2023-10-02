@@ -1,0 +1,68 @@
+@import 'option.scss';
+
+#about-page {
+    position: relative;
+    top: -100px;
+    margin-bottom: -$margin-bottom-section;
+
+    .about-page {
+        &__container {
+            width: 100%;
+            background: $white;
+
+            @include maxW('tablet-small') {
+                & {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        &__item {
+        }
+
+        &__photo {
+            width: col(1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $padding-block;
+
+            @include maxW('tablet-small') {
+                & {
+                    width: 100%;
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        &__content {
+            width: col(2);
+            padding: $padding-block;
+
+            @include maxW('tablet-small') {
+                & {
+                    width: 100%;
+                }
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+        }
+
+        &__soc {
+            font-size: 22px;
+            margin-bottom: 20px;
+
+            i {
+                transition: $transition;
+            }
+
+            a:hover {
+                i {
+                    color: $red;
+                }
+            }
+        }
+    }
+}

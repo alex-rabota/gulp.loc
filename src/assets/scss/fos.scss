@@ -1,0 +1,60 @@
+@import 'option.scss';
+
+.fos {
+    margin-bottom: $margin-bottom-section;
+    position: relative;
+    z-index: 1;
+
+    &__container {
+        display: flex;
+        width: 100%;
+        background: $white;
+
+        @include maxW('tablet') {
+            flex-direction: column;
+        }
+
+        .check-label {
+            @include maxW('mobile') {
+                cursor: pointer;
+                position: absolute;
+                bottom: -10px;
+            }
+        }
+    }
+
+    &__text {
+        width: col(1);
+        background: $gray-middle;
+        padding: 50px;
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        @include maxW('tablet') {
+            width: 100%;
+        }
+
+        @include maxW('mobile-small') {
+            padding: 30px;
+        }
+    }
+
+    &__form {
+        width: col(2);
+        padding: 50px;
+
+        @include maxW('tablet') {
+            width: 100%;
+        }
+
+        @include maxW('mobile-small') {
+            padding: 30px;
+        }
+
+        .form {
+            display: flex;
+        }
+    }
+}

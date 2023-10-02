@@ -1,0 +1,107 @@
+@import 'option.scss';
+
+.modal-window {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+
+    &-bg {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    &-msg {
+        background: $white;
+        width: 370px;
+        padding: 30px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transition: $transition;
+        cursor: auto;
+        z-index: 3;
+
+        @include maxW('mobile-small') {
+            width: 90%;
+        }
+    }
+
+    &-content {
+        position: relative;
+    }
+
+    &-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $gray-dark;
+        font-size: 36px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 19px;
+        height: 19px;
+        transition: $transition;
+
+        &:hover {
+            color: $red;
+        }
+    }
+
+    &-content {
+        .form-agree {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.modal-visible {
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+    transition: opacity $transition;
+}
+
+#modal-window-portfolio {
+    .modal-window {
+        &-msg {
+            width: 80%;
+            height: 90%;
+            padding: 0;
+            overflow: auto;
+        }
+
+        &-close {
+            margin: 30px 30px 0 0;
+            color: $white;
+            font-size: 48px;
+
+            @include maxW('tablet-small') {
+                & {
+                    margin: 5px 5px 0 0;
+                }
+            }
+
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+
+    .portfolio-big-img img {
+        width: 100%;
+        margin-bottom: -6px;
+    }
+}

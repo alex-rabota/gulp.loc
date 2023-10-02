@@ -1,0 +1,53 @@
+@import 'option.scss';
+
+#info {
+    background: url("../../assets/images/bg-info.jpg") bottom center;
+    background-size: cover;
+    position: relative;
+    top: -150px;
+    padding: 100px 0 150px;
+    margin-bottom: -250px;
+
+    .info {
+        &__container {
+            @include maxW('tablet') {
+                flex-direction: column;
+            }
+        }
+
+        &__item {
+            width: col(1);
+            text-align: center;
+            color: $white;
+
+            @include maxW('tablet') {
+                width: 100%;
+                margin-bottom: 50px;
+
+                &:nth-last-child(1) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__content {
+            border: 5px solid $white;
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+
+        &__text {
+            font-size: 18px;
+        }
+    }
+
+    .wrapper {
+        flex-direction: column;
+    }
+}

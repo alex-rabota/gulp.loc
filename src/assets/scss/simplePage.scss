@@ -1,0 +1,14 @@
+@import 'option.scss';
+
+#simple-page {
+    position: relative;
+    top: -100px;
+    margin-bottom: -$margin-bottom-section;
+
+    .simple-page {
+        &__container {
+            background: $white;
+            padding: $padding-block;
+        }
+    }
+}
